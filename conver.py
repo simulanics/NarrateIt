@@ -54,7 +54,7 @@ class URLToAudioConverter:
         
         for i, turn in enumerate(conversation["conversation"]):
             filename = os.path.join(folder_name, f"output_{i}.wav")
-            model = "aura-asteria-en" if i % 2 else "aura-orion-en"
+            model = "aura-luna-en" if i % 2 else "aura-perseus-en"
             options = SpeakOptions(model=model, encoding="linear16", container="wav")
             self.deepgram_client.speak.v("1").save(
                 filename, {"text": turn["text"]}, options
